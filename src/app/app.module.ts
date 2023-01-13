@@ -23,6 +23,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
   ],

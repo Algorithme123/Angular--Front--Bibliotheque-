@@ -16,14 +16,18 @@ export class LivreComponent implements OnInit {
   
   this.livreService = livreService;
   }
-  
+  editer : String = 'Editer un Livre';
+  liste : String = 'Liste des Livres';
+  details : String = 'Details';
+  ajouter : String = 'Ajouter un livre';
   errorMessage :  any;
   livre : Livre = new Livre();
 
   successMessage : any;
   
-  afficherFormulaire : boolean = false;
-
+  isAfficherFormulaire : boolean = false;
+  
+  
 livres : Livre[] = []
   ngOnInit(): void {
   
@@ -38,7 +42,7 @@ livres : Livre[] = []
   }
   
   formulairePassageDeFormulaireAlaListe(){
-  this.afficherFormulaire =!this.afficherFormulaire;
+  this.isAfficherFormulaire =!this.isAfficherFormulaire;
   }
   
   formulaireAjoutLivre=  new FormGroup({

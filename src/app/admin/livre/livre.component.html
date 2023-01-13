@@ -5,83 +5,127 @@
                  <div class="iq-card">
                     <div class="iq-card-header d-flex justify-content-between">
                        <div class="iq-header-title">
-                          <h4 class="card-title">book Lists</h4>
+                          <h4 class="card-title" *ngIf="!isAfficherFormulaire">{{ liste }}</h4>
+                          <h4 class="card-title" *ngIf="isAfficherFormulaire">{{ ajouter }}</h4>
+                          <!--<h4 class="card-title" *ngIf="!isAfficherFormulaire">{{ liste }}</h4>-->
                        </div>
                        <div class="iq-card-header-toolbar d-flex align-items-center">
-                          <a href="admin-add-book.html" class="btn btn-primary">Add New book</a>
+                          <a (click)="formulairePassageDeFormulaireAlaListe()" class="btn btn-primary">Ajouter un Livre</a>
                        </div>
                     </div>
+                
+                     <div class="iq-card-body">
+                        <div   *ngIf="!isAfficherFormulaire"  class="Liste des livres">
+                     
+                           <div class="table-responsive">
+                              <table class="data-tables table table-striped table-bordered" style="width:100%">
+                                 <thead>
+                                    <tr>
+                                          <th style="width: 3%;">No</th>
+                                          <th style="width: 12%;"> Image</th>
+                                          <th style="width: 15%;"> Name</th>
+                                          <th style="width: 15%;"> Categorie</th>
+                                          <th style="width: 15%;"> Author</th>
+                                          <th style="width: 18%;"> Description</th>
+                                          <th style="width: 7%;"> Price</th>
+                                          <th style="width: 7%;"> pdf</th>
+                                          <th style="width: 15%;">Action</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr *ngFor="let livre of livres; let i =index">
+                                          <td>{{ i + 1 }}</td>
+                                          <td><img class="img-fluid rounded" src="assets/images/browse-books/01.jpg" alt=""></td>
+                                          <td>{{ livre.nom}}</td>
+                                          <td>{{ livre.categorie }}</td>
+                                          <td>{{ livre.auteur }}</td>
+                                          <td>
+                                          <p class="mb-0">{{ livre.description }}</p>
+                                          </td>
+                                          <td>${{ livre.prix }}</td>
+                                          <td><a href="book-pdf.html"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>                                        
+                                          <td>
+                                             <div class="flex align-items-center list-user-action">
+                                             <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
+                                             <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" (click)="confirmBox(livre.id)">id<i class="ri-delete-bin-line"></i></a>
+                                             <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" (click)="confirmBox1(livre)">id<i class="ri-delete-bin-line"></i></a>
+                                          </div>
+                                          </td>
+                                    </tr>
+                                    <tr>
+                                          <td>2</td>
+                                          <td><img class="img-fluid rounded" src="assets/images/browse-books/02.jpg" alt=""></td>
+                                          <td>The Catcher in the Rye</td>
+                                          <td>History Books</td>
+                                          <td>Fritz Wold</td>
+                                          <td>
+                                          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
+                                          </td>
+                                          <td>$89</td>
+                                          <td><a href="book-pdf.html"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>                                        
+                                          <td>
+                                             <div class="flex align-items-center list-user-action">
+                                             <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
+                                             <a class="bg-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
+                                          </div>
+                                          </td>
+                                    </tr>
 
-                <div class="Liste des livres">
-                
-                
-                
-                        <div class="iq-card-body">
-                                <div class="table-responsive">
-                                   <table class="data-tables table table-striped table-bordered" style="width:100%">
-                                     <thead>
-                                         <tr>
-                                             <th style="width: 3%;">No</th>
-                                             <th style="width: 12%;">Book Image</th>
-                                             <th style="width: 15%;">Book Name</th>
-                                             <th style="width: 15%;">Book Catrgory</th>
-                                             <th style="width: 15%;">Book Author</th>
-                                             <th style="width: 18%;">Book Description</th>
-                                             <th style="width: 7%;">Book Price</th>
-                                             <th style="width: 7%;">Book pdf</th>
-                                             <th style="width: 15%;">Action</th>
-                                         </tr>
-                                     </thead>
-                                     <tbody>
-                                         <tr >
-                                             <td>1</td>
-                                             <td><img class="img-fluid rounded" src="images/browse-books/01.jpg" alt=""></td>
-                                             <td>Reading on the Worlds</td>
-                                             <td>General Books</td>
-                                             <td>Jhone Steben</td>
-                                             <td>
-                                               <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                             </td>
-                                             <td>$89</td>
-                                             <td><a href="book-pdf.html"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>                                        
-                                             <td>
-                                                <div class="flex align-items-center list-user-action">
-                                                  <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                                  <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                               </div>
-                                             </td>
-                                         </tr>
-                                         <tr>
-                                             <td>2</td>
-                                             <td><img class="img-fluid rounded" src="images/browse-books/02.jpg" alt=""></td>
-                                             <td>The Catcher in the Rye</td>
-                                             <td>History Books</td>
-                                             <td>Fritz Wold</td>
-                                             <td>
-                                               <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus non elit a scelerisque. Etiam feugiat luctus est, vel commodo odio rhoncus sit amet</p>
-                                             </td>
-                                             <td>$89</td>
-                                             <td><a href="book-pdf.html"><i class="ri-file-fill text-secondary font-size-18"></i></a></td>                                        
-                                             <td>
-                                                <div class="flex align-items-center list-user-action">
-                                                  <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                                  <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                               </div>
-                                             </td>
-                                         </tr>
+                                    
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div> 
+                        <div *ngIf="isAfficherFormulaire" class="afficher formulaire">
+                        
+                           <form action="https://templates.iqonic.design/booksto/html/admin-books.html"  [formGroup]="formulaireAjoutLivre" (ngSubmit)="saveLivre()">
+                              <div class="form-group">
+                                 <label> Nom du Livre :</label>
+                                 <input type="text" class="form-control" formControlName="nom">
+                              </div>
+                              <div class="form-group"> 
+                                 <label> Categorie du Livre:</label>
+                                 <input type="text" class="form-control" formControlName="categorie">
 
-                                         
-                                     </tbody>
-                                 </table>
-                                </div>
-                             </div>
-                
-                
-                
-                
-                </div>
-        </div>
-        </div>
-        </div>
-        </div>
-</div>
+                              </div>
+                              <div class="form-group">
+                                 <label>Book Author:</label>
+                                 <select class="form-control" id="exampleFormControlSelect2">
+
+                                 </select>
+                              </div>
+                              <div class="form-group">
+                                 <label>Book Image:</label>
+                                 <div class="custom-file">
+                                    <input type="file" class="custom-file-input" accept="image/png, image/jpeg">
+                                    <label class="custom-file-label">Choose file</label>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label>Book pdf:</label>
+                                 <div class="custom-file">
+                                    <input type="file" class="custom-file-input" accept="application/pdf, application/vnd.ms-excel">
+                                    <label class="custom-file-label">Choose file</label>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label>Book Price:</label>
+                                 <input type="text" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                 <label>Book Description:</label>
+                                 <textarea class="form-control" rows="4"></textarea>
+                              </div>
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                              <button type="reset" class="btn btn-danger">Reset</button>
+                           </form>
+                        
+                        
+                        
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>  
