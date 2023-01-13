@@ -1,23 +1,25 @@
 export class Livre {
-
-        isbnn! : String;
+        id! : number;
+        nom! : String;
+        auteur! : String;
         image !: String;
-        titre !: String;
-        sousTitre !: String;
+        categorie! : String;
+        pdf! : String;
+        prix! : number;
         description! : String;
-        langue! : String;
-        quantite! : number;
-        dateMisEnVente! : Date;
-        datePublication !: Date;
-        autorisationParentale !: Boolean;
-        editeur! : String;
-        nombreDePage !: number;
-        nomDeLaSerie !: String;
-        genre! : String;
-        contributeurs! : String;
+
         
         
-        
+        public constructor(){
+        this.id = 0;
+        this.nom ="";
+        this.auteur='';
+        this.image ="";
+        this.categorie='';
+        this.pdf ='';
+        this.prix =0;
+        this.description ='';
+        }
 
 
 

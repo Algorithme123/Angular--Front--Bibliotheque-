@@ -25,22 +25,30 @@ export class LivreService {
  
  //Modification d'une occurrence ;
  
- editUrl = 'http://localhost:9000/livre/edit/{id}';
- 
+ editLivre(id : number , livre : Livre) : Observable<Livre>{
+  return this.http.put<Livre>('http://localhost:9000/livre/edit/'+id ,livre)
+}
+
  
  //Suppression d'une occurrence par la clé primaire ;
- suppUrl = 'http://localhost:9000/livre/supp';
- deleteById( id : any):Observable <any>{
-  let ids=id;
-  return this.http.delete( `${this.suppUrl}/${ids}` )
+ suppUrl = 'http://localhost:9000/livre/supp/';
+//  deleteById( id : number):Observable <Livre>{
+//   let ids=id;
+//   return this.http.delete<Livre>( `${this.suppUrl}/${ids}` )
+  
+//  }
+
+deleteById( id : number):Observable <Livre>{
+  // let ids=id;
+  return this.http.delete<Livre>(this.suppUrl+id )
   
  }
  
  //Suppression d'une occurrence par l'objet entier ;
  suppObjetUrl = 'http://localhost:9000/livre/supprimer'
- deleteByObjet(data : any): Observable<any>{
+ deleteByObjet(data : Livre): Observable<Livre>{
 
-  return this.http.delete(`${this.suppObjetUrl}`,data)
+  return this.http.delete<Livre>(`${this.suppObjetUrl}`)
  
  }
  
