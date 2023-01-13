@@ -47,8 +47,8 @@
                                           <td>
                                              <div class="flex align-items-center list-user-action">
                                              <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
-                                             <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" (click)="confirmBox(livre.id)">id<i class="ri-delete-bin-line"></i></a>
-                                             <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" (click)="confirmBox1(livre)">id<i class="ri-delete-bin-line"></i></a>
+                                             <a class="bg-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" (click)="confirmBox(livre.id)">id<i class="ri-delete-bin-line"></i></a>
+                                             <a class="bg-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" (click)="confirmBox1(livre)">objet<i class="ri-delete-bin-line"></i></a>
                                           </div>
                                           </td>
                                     </tr>
@@ -89,32 +89,31 @@
 
                               </div>
                               <div class="form-group">
-                                 <label>Book Author:</label>
-                                 <select class="form-control" id="exampleFormControlSelect2">
+                                 <label>Auteur du Livre:</label>
+                                 <input type="text" class="form-control" formControlName="auteur">
 
-                                 </select>
                               </div>
                               <div class="form-group">
-                                 <label>Book Image:</label>
+                                 <label> Image du Livre:</label>
                                  <div class="custom-file">
-                                    <input type="file" class="custom-file-input" accept="image/png, image/jpeg">
+                                    <input type="file" class="custom-file-input" formControlName="image" accept="image/png, image/jpeg">
                                     <label class="custom-file-label">Choose file</label>
                                  </div>
                               </div>
                               <div class="form-group">
-                                 <label>Book pdf:</label>
+                                 <label>Pdf du livre:</label>
                                  <div class="custom-file">
-                                    <input type="file" class="custom-file-input" accept="application/pdf, application/vnd.ms-excel">
+                                    <input type="file" class="custom-file-input" formControlName="pdf" accept="application/pdf, application/vnd.ms-excel">
                                     <label class="custom-file-label">Choose file</label>
                                  </div>
                               </div>
-                              <div class="form-group">
-                                 <label>Book Price:</label>
-                                 <input type="text" class="form-control">
+                              <div class="form-group"> 
+                                 <label>Prix du livre:</label>
+                                 <input type="text" class="form-control" formControlName="prix">
                               </div>
                               <div class="form-group">
-                                 <label>Book Description:</label>
-                                 <textarea class="form-control" rows="4"></textarea>
+                                 <label> Description du livre:</label>
+                                 <textarea class="form-control" rows="4" formControlName="description" ></textarea>
                               </div>
                               <button type="submit" class="btn btn-primary">Submit</button>
                               <button type="reset" class="btn btn-danger">Reset</button>

@@ -16,7 +16,7 @@ export class LivreService {
   
   // lien ajout 
   
-  addUrl = 'http://localhost:9000/livre/ajout';
+  addUrl = 'http://localhost:9000/livre/add';
   
  ajoutLivre(data: any):Observable <any> {
   console.log("Livre Save ", data);
@@ -75,7 +75,7 @@ deleteById( id : number):Observable <Livre>{
 
 // Affichage de toutes les occurrences ;
 
-getAllURL = 'http://localhost:9000/livre/liste'
+getAllURL = 'http://localhost:9000/allLivre'
 getAllLivre():Observable<Array<Livre>>{
 
   return this.http.get<Array<Livre>>(this.getAllURL);
