@@ -82,6 +82,15 @@ livres : Livre[] = []
       });
       
     }
+    unLivre : Livre = new Livre();
+    
+    getById(id: number){
+    
+    this.livreService.findById(id).subscribe((response)=>{
+    
+    response=this.unLivre});
+  
+  }
     
     aditLivre(){
     

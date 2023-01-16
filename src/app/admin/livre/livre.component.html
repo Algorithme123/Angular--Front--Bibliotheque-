@@ -48,7 +48,8 @@
                                              <div class="flex align-items-center list-user-action">
                                              <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="admin-add-book.html"><i class="ri-pencil-line"></i></a>
                                              <a class="bg-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" (click)="confirmBox(livre.id)">id<i class="ri-delete-bin-line"></i></a>
-                                             <a class="bg-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" (click)="confirmBox1(livre)">objet<i class="ri-delete-bin-line"></i></a>
+                                             <a class="bg-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" (click)="confirmBox1(livre)">objet<i class="ri-delete-bin-line"></i></a>
+                                             <a class="bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" (click)="getById(livre.id)">Details<i class="ri-paper-bin-line"></i></a>
                                           </div>
                                           </td>
                                     </tr>
@@ -122,6 +123,115 @@
                         
                         
                         </div>
+                        
+                        
+                           
+                           
+                           
+                           
+                            
+                         <!-- Large modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+                        
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                          <div class="modal-header">
+                                 <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                   <span aria-hidden="true">&times;</span>
+                                 </button>
+                               </div>
+                               <div class="modal-body">
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                               
+                                 <div class="detail d'un livre">
+                                                
+                                    <div class="description-contens align-items-top row">
+                                          <div class="col-md-6">
+                                             <div class="iq-card-transparent iq-card-block iq-card-stretch iq-card-height">
+                                                <div class="iq-card-body p-0">
+                                                   <div class="row align-items-center">
+                                                      <div class="col-3">
+                                                         <ul id="description-slider-nav" class="list-inline p-0 m-0  d-flex align-items-center">
+                                                            <li>
+                                                               <a href="">
+                                                               <img src="assets/images/book-dec/01.jpg" class="img-fluid rounded w-100" alt="">
+                                                               </a>
+                                                            </li>
+                                                            
+                                                         </ul>
+                                                      </div>
+                                                      <div class="col-9">
+                                                         <ul id="description-slider" class="list-inline p-0 m-0  d-flex align-items-center">
+                                                            
+                                                            <li>
+                                                               <a href="">
+                                                               <img src="assets/images/book-dec/05.jpg" class="img-fluid w-100 rounded" alt="">
+                                                               </a>
+                                                            </li>
+                                                            
+                                                         </ul>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                             <div class="iq-card-transparent iq-card-block iq-card-stretch iq-card-height">
+                                                <div class="iq-card-body p-0">
+                                                   <h3 class="mb-3">A Casey Christi night books in the raza Dakota Krout</h3>
+                                                   <div class="price d-flex align-items-center font-weight-500 mb-2">
+                                                      <span class="font-size-20 pr-2 old-price">$99</span>
+                                                      <span class="font-size-24 text-dark">$48</span>
+                                                   </div>
+                                                   <div class="mb-3 d-block">
+                                                      <span class="font-size-20 text-warning">
+                                                      <i class="fa fa-star mr-1"></i>
+                                                      <i class="fa fa-star mr-1"></i>
+                                                      <i class="fa fa-star mr-1"></i>
+                                                      <i class="fa fa-star mr-1"></i>
+                                                      <i class="fa fa-star"></i>
+                                                      </span>
+                                                   </div>
+                                                   <span class="text-dark mb-4 pb-4 iq-border-bottom d-block">Monterhing in the best book testem ipsum is simply dtest in find in a of the printing and typeseting industry into to end.in find in a of the printing and typeseting industry in find to make it all done into end.</span>
+                                                   <div class="text-primary mb-4">Author: <span class="text-body">Jhone Steben</span></div>
+                                                   <div class="mb-4 d-flex align-items-center">                                       
+                                                      <a href="#" class="btn btn-primary view-more mr-2">Add To Cart</a>
+                                                      <a href="book-pdf.html" class="btn btn-primary view-more mr-2">Read Sample</a>
+                                                   </div>
+                                 
+                                                </div>
+                                             </div>
+                                          </div>
+                                    </div>
+                                 
+                                 
+                                    </div>
+                               
+                               
+                 
+                               </div>
+                               <div class="modal-footer">
+                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                 <button type="button" class="btn btn-primary">Save changes</button>
+                               </div>         
+                            </div>
+                          </div>
+                        </div>
+ 
+ 
+ 
+ 
+ 
+ 
                      </div>
                   </div>
                </div>

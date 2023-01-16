@@ -53,7 +53,7 @@ deleteById( id : number):Observable <Livre>{
  }
  
  //Recherche d'une occurrence par la clé primaire ;
- findByIdUrl= 'http://localhost:9000/livre'
+ findByIdUrl= 'http://localhost:9000/livre/one'
  findById(id : any): Observable<any>{
     let ids=id;
     return this.http.get(`${this.findByIdUrl}/${ids}`);
